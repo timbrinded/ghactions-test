@@ -1,33 +1,37 @@
 name: Actions Workflow
 
-on: 
+on:
   repository_dispatch:
     types: [build]
+  push:
+    branches:
+      - master
+      - timbo
   # push:
   pull_request:
     types: [closed, assigned, opened, reopened]
 
 jobs:
-    run-github-actions:
-      runs-on: ubuntu-latest
-      steps:
-        - name: client payload
-          run: echo ${{ github.event.client_payload.env}}
-        - name: List Files
-          run: |
-            pwd
-            ls -a
-            echo $GITHUB_SHA
-        - name: Checkout Repo
-          uses: actions/checkout@v1
-        - name: List Files after checkout
-          run: |
-            pwd
-            ls -a
-        - name: Simple JS Action
-          id: greet
-          uses: actions/hello-world-javascript-action@v1.1
-          with:
-            who-to-greet: timbo
-        - name: Log greeting time
-          run: echo "${{ steps.greet.outputs.time }}"
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: client payload
+        run: echo ${{ github.event.client_payload.env}}
+      - name: List Files
+        run: |
+          pwd
+          ls -a
+          echo $GITHUB_SHA
+      - name: Checkout Repo
+        uses: actions/checkout@v1
+      - name: List Files after checkout
+        run: |
+          pwd
+          ls -a
+      - name: Simple JS Action
+        id: greet
+        uses: actions/hello-world-javascript-action@v1.1
+        with:
+          who-to-greet: timbo
+      - name: Log greeting time
+        run: echo "${{ steps.greet.outputs.time }}"
