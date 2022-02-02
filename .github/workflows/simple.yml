@@ -6,8 +6,8 @@ jobs:
   run-shell-command:
     runs-on: ubuntu-latest
     steps:
-      - name: echco a string
-        run: echo "hello timbo!!"
+      - name: echo a string
+        run: echocv "hello timbo!!"
       - name: multiline script
         run: |
           node -v
