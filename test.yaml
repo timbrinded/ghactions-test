@@ -1,0 +1,26 @@
+name: Timbo
+age: 35
+address: "15 wadawdaw:wadwa"
+active: true
+key:
+    key: value
+    anotherkey: value2
+    key3:
+        anotherKey: Timbo
+        key: bimbo
+
+jsonObject: { key: value, key2: value, key3: { key1: value, key2: value } }
+array: 
+    - item1
+    - item2
+    - {key: value}
+jsonArray: [item1, item2]
+objectsArray:
+    - key: value
+      key3: value2
+    - key2: value
+      key4: value2
+longText: > 
+    wadawdawkdawl 
+    wapdawldnawlndaw awdopawjd;pawmdl;awm
+     awpodaw;podawmpd awdoaw[pdojaw]
