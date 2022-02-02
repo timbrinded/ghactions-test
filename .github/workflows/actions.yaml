@@ -10,6 +10,7 @@ jobs:
           run: |
             pwd
             ls -a
+            echo $GITHUB_SHA
         - name: Checkout Repo
           uses: actions/checkout@v1
         - name: List Files after checkout
