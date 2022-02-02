@@ -6,7 +6,9 @@ on:
   push:
     branches:
       - master
-      - timbo
+      - 'feature/*'
+      - 'features/**'
+      - '!feature/timbo'
   # push:
   pull_request:
     types: [closed, assigned, opened, reopened]
