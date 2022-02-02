@@ -3,12 +3,6 @@ name: Actions Workflow
 on:
   repository_dispatch:
     types: [build]
-  push:
-    branches:
-      - master
-      - 'feature/*'
-      - 'features/**'
-      - '!feature/timbo'
   # push:
   pull_request:
     types: [closed, assigned, opened, reopened]
