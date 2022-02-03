@@ -29,5 +29,5 @@ jobs:
       - name: Log node version
         run: node -v
       - name: print Var
-        run: echo '$IS_UBUNTU_8'
+        run: echo $IS_UBUNTU_8
 
