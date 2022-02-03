@@ -1,8 +1,18 @@
 name: Shell Commands
 
-on: [pull_request]
+on: [push]
 
 jobs:
+  decrypt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Decrypt file
+        run: gpg --quiet --batch --yes --decrypt -passphrase="$PASSPHRASE" --output $HOME/secret.json secret.json.gpg
+        env:
+          PASSPHRASE: ${{secrets.PASSPHRASE}}
+      - name: Print our file contents
+        run: cat $HOME/secret.json
   run-shell-command:
     runs-on: ubuntu-latest
     steps:
