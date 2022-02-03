@@ -18,3 +18,12 @@ jobs:
         run: echo '${{ toJSON(strategy) }}'
       - name: Dump matrix context
         run: echo '${{ toJSON(matrix) }}'
+  new_timbo_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: dump
+        run: |
+          echo ${{contains("hello,"ll") }}
+          echo ${{startsWith("hello,"he") }}
+          echo ${{endsWith("hello,"lo") }}
+          echo ${{format("Hello {0} {1} {2}", "World", "!", "!") }}
