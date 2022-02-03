@@ -5,8 +5,9 @@ jobs:
   node-version:
     strategy:
       matrix:
-        node_version: [10,6,8]
-    runs-on: ubuntu-latest
+        os: [macos-latest, ubuntu-latest, windows-latest]
+        node_version: [10, 6, 8]
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Log node version
         run: node -v
